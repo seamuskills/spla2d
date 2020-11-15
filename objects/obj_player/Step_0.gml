@@ -76,6 +76,15 @@ if place_meeting(x+hsp,y,obj_wall) or (place_meeting(x+hsp,y,obj_grate) and not 
 		while not place_meeting(x+sign(hsp),y,obj_wall){
 			x += sign(hsp)
 		}
+		if hsp > 0 {
+			if instance_place(x+sign(hsp),y,obj_wall).left and instance_place(x+sign(hsp),y,obj_wall).left_color = color{
+				if vsp > -walksp*2{vsp=-walksp*2}
+			}
+		}else{
+			if instance_place(x+sign(hsp),y,obj_wall).right and instance_place(x+sign(hsp),y,obj_wall).right_color = color{
+				if vsp > -walksp*2{vsp=-walksp*2}
+			}
+		}
 	}else{
 		while not place_meeting(x+sign(hsp),y,obj_grate){
 			x += sign(hsp)
