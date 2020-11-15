@@ -142,6 +142,12 @@ if place_meeting(x,y+vsp,obj_wall){
 	}
 	vsp=0
 }
+if place_meeting(x,y+vsp,obj_grate){
+	while not place_meeting(x,y+sign(vsp),obj_grate){
+		y+=sign(vsp)
+	}
+	vsp=0
+}
 if hp < 100{
 	hp += 0.05
 }
