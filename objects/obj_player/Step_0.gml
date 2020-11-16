@@ -2,12 +2,12 @@
 // You can write your code in this editor
 if dead = false{ //make sure your not dead
 // inputs and vars
-var left = keyboard_check(ord("A"))
-var right = keyboard_check(ord("D"))
-var jump = keyboard_check(ord("W"))
+var left = keyboard_check(ord(obj_optionshandler.mctrl[1]))
+var right = keyboard_check(ord(obj_optionshandler.mctrl[2]))
+var jump = keyboard_check(ord(obj_optionshandler.mctrl[0]))
 var squidkey=keyboard_check(vk_shift)
 swimming = false
-var bomb = keyboard_check(ord("E"))
+var bomb = keyboard_check(ord(obj_optionshandler.auxctrl[1]))
 if squidkey{
 	image_yscale=0.5
 	squid = true

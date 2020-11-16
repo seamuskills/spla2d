@@ -16,6 +16,11 @@ if not file_exists("options.dat"){
 	ds_map_add(map,"levels_unlocked",1)
 	ds_map_add(map,"player_color",0)
 	ds_map_add(map,"weapon",0)
+	ds_map_add(map,"m1","W")
+	ds_map_add(map,"m2","A")
+	ds_map_add(map,"m3","D")
+	ds_map_add(map,"a1","Q")
+	ds_map_add(map,"a2","E")
 	
 	var wrapper = ds_map_create()
 	ds_map_add_list(wrapper,"ROOT",root_list)
@@ -40,10 +45,26 @@ if file_exists("options.dat"){
 		if wpn = undefined{
 			wpn = 0
 		}
+		for (var h=1;h<6;h++){
+			if h > 3{
+				if map[? "a"+(string(h-3))] = undefined{
+					show_message("you are using an old options file, to fix you must go to run->%localappdata%->spla2d then delete options.dat to regenerate the file")
+					game_end()
+					break
+				}
+			}else{
+				if map[? "m"+string(h)] = undefined{
+					show_message("you are using an old options file, to fix you must go to run->%localappdata%->spla2d then delete options.dat to regenerate the file")
+					game_end()
+					break
+				}
+			}
+		}
+		mctrl=[map[?"m1"],map[?"m2"],map[?"m3"]]
+		auxctrl = [map[?"a1"],map[?"a2"]]
 	}
 	ds_map_destroy(wrapper)
 	show_debug_message("options_loaded")
 }else{
 	show_debug_message("no options data")
 }
-alarm[0] = 1

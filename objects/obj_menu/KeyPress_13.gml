@@ -1,0 +1,84 @@
+/// @description Insert description here
+// You can write your code in this editor
+if page = 2{
+	switch menu_index{
+		case 0:
+			keychange = "jump"
+		break
+		case 1:
+			keychange = "left"
+		break
+		case 2:
+			keychange = "right"
+		break
+		case 3:
+			keychange = "bomb"
+		break
+		case 4:
+			keychange = "zoom"
+		break
+		case 5:
+			page = 0
+			buttons = array_length(button[page])
+		break
+	}
+}else{
+if page = 0{
+	switch menu_index{
+		case 0:
+			room_goto(room0)
+		break
+		case 1:
+			page = 3
+			buttons = array_length(button[page])
+		break
+		case 2:
+			room_goto(obj_optionshandler.lu)
+		break
+		case 3:
+			page = 1
+			buttons = array_length(button[page])
+		break
+		case 4:
+			page = 2
+			buttons = array_length(button[page])
+		break
+		case 5:
+			game_end()
+		break
+	}
+}else{
+if page = 1{
+	switch menu_index{
+		case 0:
+			if col_selected < array_length(colors)-1{
+				col_selected++
+			}else{
+				col_selected = 0
+			}
+			obj_optionshandler.pcolor = col_selected
+		break
+		case 1:
+			obj_optionshandler.mb = !obj_optionshandler.mb
+		break
+		case 2:
+			weapon += 1
+			if weapon > 1{
+				weapon = 0
+			}
+			obj_optionshandler.wpn = weapon
+		break
+		case 4:
+			page = 0
+			buttons = array_length(button[page])
+		break
+	}
+}else{
+if page = 3{
+	if menu_index = obj_optionshandler.lu{
+		page = 0
+		buttons = array_length(button[page])
+	}else{
+		room_goto(menu_index+1)
+	}
+}}}}

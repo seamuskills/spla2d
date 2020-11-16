@@ -1,7 +1,7 @@
 {
   "option_windows_display_name": "spla2d",
   "option_windows_executable_name": "spla2d",
-  "option_windows_version": "1.4.0.0",
+  "option_windows_version": "1.7.0.0",
   "option_windows_company_info": "N/A",
   "option_windows_product_info": "spla2d",
   "option_windows_copyright_info": "N/A",

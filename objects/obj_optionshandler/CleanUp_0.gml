@@ -10,6 +10,12 @@ var root_list = ds_list_create()
 	ds_map_add(map,"levels_unlocked",lu)
 	ds_map_add(map,"player_color",pcolor)
 	ds_map_add(map,"weapon",wpn)
+	for (var i=1;i<4;i++){
+		ds_map_add(map,"m"+string(i),mctrl[i-1])
+	}
+	for (var i=1;i<3;i++){
+		ds_map_add(map,"a"+string(i),auxctrl[i-1])
+	}
 	
 	var wrapper = ds_map_create()
 	ds_map_add_list(wrapper,"ROOT",root_list)

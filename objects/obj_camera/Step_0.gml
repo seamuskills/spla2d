@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-var zoom = keyboard_check(ord("Q"))
+var zoom = keyboard_check(ord(obj_optionshandler.auxctrl[0]))
 if zoom{
 	if not zoomed{
 		var pm = matrix_build_projection_ortho(1024,512,-10000,100000)
