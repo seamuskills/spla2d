@@ -27,7 +27,7 @@ if keychange = "jump"{
 		keychange = undefined
 	}
 }else{
-	button[2][0] = "jump: "+ obj_optionshandler.mctrl[0]
+	button[2][0] = "jump: "+ keyname(obj_optionshandler.mctrl[0])
 }
 if keychange = "left"{
 	button[2][1] = "left: press a key"
@@ -36,7 +36,7 @@ if keychange = "left"{
 		keychange = undefined
 	}
 }else{
-	button[2][1] = "left: "+ obj_optionshandler.mctrl[1]
+	button[2][1] = "left: "+ keyname(obj_optionshandler.mctrl[1])
 }
 if keychange = "right"{
 	button[2][2] = "right: press a key"
@@ -45,7 +45,7 @@ if keychange = "right"{
 		keychange = undefined
 	}
 }else{
-	button[2][2] = "right: "+ obj_optionshandler.mctrl[2]
+	button[2][2] = "right: "+ keyname(obj_optionshandler.mctrl[2])
 }
 if keychange = "bomb"{
 	button[2][3] = "bomb: press a key"
@@ -54,7 +54,7 @@ if keychange = "bomb"{
 		keychange = undefined
 	}
 }else{
-	button[2][3] = "bomb: "+ obj_optionshandler.auxctrl[1]
+	button[2][3] = "bomb: "+ keyname(obj_optionshandler.auxctrl[1])
 }
 if keychange = "zoom"{
 	button[2][4] = "zoom out: press a key"
@@ -63,7 +63,7 @@ if keychange = "zoom"{
 		keychange = undefined
 	}
 }else{
-	button[2][4] = "zoom out: "+ obj_optionshandler.auxctrl[0]
+	button[2][4] = "zoom out: "+keyname(obj_optionshandler.auxctrl[0])
 }
 button[1][0] = "color: "+color_names[obj_optionshandler.pcolor]
 button[1][2] = "weapon: " + weapon_names[obj_optionshandler.wpn]
