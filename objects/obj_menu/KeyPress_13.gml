@@ -51,11 +51,7 @@ if page = 0{
 if page = 1{
 	switch menu_index{
 		case 0:
-			if col_selected < array_length(colors)-1{
-				col_selected++
-			}else{
-				col_selected = 0
-			}
+			col_selected = (col_selected+1) mod array_length(colors)
 			obj_optionshandler.pcolor = col_selected
 		break
 		case 1:
@@ -67,6 +63,9 @@ if page = 1{
 				weapon = 0
 			}
 			obj_optionshandler.wpn = weapon
+		break
+		case 3:
+			obj_optionshandler.hc = !obj_optionshandler.hc
 		break
 		case 4:
 			page = 0

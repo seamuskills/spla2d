@@ -16,7 +16,7 @@ grav = 0.25
 in_ink = false
 jump_force = -3
 squid_jump=-5
-var colors = [make_color_rgb(255,165,0),$00bbff,$00ffff,$3b9d40,$0da817,$c1ff88,$825600,$0000ff,$00ff00,$ee9bff,$825600]
+var colors = [make_color_rgb(255,165,0),$00bbff,$00ffff,$3b9d40,$0da817,$c1ff88,$825600,$0000ff,$00ff00,$ee9bff,$aa00aa]
 color = colors[obj_optionshandler.pcolor]
 //purple 16750848
 image_blend = color

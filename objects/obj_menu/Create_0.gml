@@ -3,8 +3,10 @@
 menu_x = x
 menu_y = y
 
-colors = [make_color_rgb(255,165,0),$00bbff,$00ffff,$3b9d40,$0da817,$c1ff88,$825600,$0000ff,$00ff00,$ee9bff,$825600]
-color_names = ["orange","marigold","yellow","green","neon green","mint","cobalt","deep red","pure green","floral"]
+audio_play_sound(mus_menu,1,true)
+
+colors = [ $00a5ff,$00bbff,$00ffff,$3b9d40,$0da817,$c1ff88,$825600,$0000ff,$00ff00,$ee9bff,$aa00aa]
+color_names = ["orange","marigold","yellow","green","neon green","mint","cobalt","deep red","pure green","floral","lightning purple"]
 
 col_selected = 0
 
@@ -21,6 +23,8 @@ for (i=obj_optionshandler.lu-1;i>-1;i--){
 button[3][obj_optionshandler.lu] = "back"
 weapon_names = ["shooter","charger","roller"]
 keychange = undefined
+
+weapon = 0
 
 menu_index = 0
 last_selected = 0
