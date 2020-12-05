@@ -221,7 +221,7 @@ if (squid or mouse_check_button_released(mb_left)) and weapon = 1 and charge > 0
 }
 if bomb and canfire and ink > 70 and not squid{
 	audio_play_sound(sfx_shoot,0,false)
-	spray = instance_create_layer(x,y,layer,obj_splat_bomb)
+	spray = instance_create_layer(x,y,layer,obj_burst_bomb)
 	spray.image_blend = color
 	alarm[0] = fire_debounce
 	canfire = false

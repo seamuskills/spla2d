@@ -13,7 +13,7 @@
   "bbox_bottom": 15,
   "HTile": false,
   "VTile": false,
-  "For3D": false,
+  "For3D": true,
   "width": 16,
   "height": 16,
   "textureGroupId": {
@@ -48,7 +48,7 @@
             {"id":"91c6ab17-5de4-432d-a4f2-e7bd59d7b430","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"775a33e2-ba5e-46ac-af95-18ca9ba58198","path":"sprites/spr_water/spr_water.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
