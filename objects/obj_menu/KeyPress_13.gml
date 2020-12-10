@@ -44,6 +44,9 @@ if page = 0{
 			buttons = array_length(button[page])
 		break
 		case 5:
+			url_open("https://forms.gle/wdGoHPQePx8iwR137")
+		break
+		case 6:
 			game_end()
 		break
 	}
@@ -65,9 +68,16 @@ if page = 1{
 			obj_optionshandler.wpn = weapon
 		break
 		case 3:
-			obj_optionshandler.hc = !obj_optionshandler.hc
+			bomb += 1
+			if bomb > 2{
+				bomb = 0
+			}
+			obj_optionshandler.bomb = bomb
 		break
 		case 4:
+			obj_optionshandler.hc = !obj_optionshandler.hc
+		break
+		case 5:
 			page = 0
 			buttons = array_length(button[page])
 		break

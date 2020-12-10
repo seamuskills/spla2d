@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 weapon = obj_optionshandler.wpn
+btype = obj_optionshandler.bomb
 if weapon = 1{
 	charge = 0
 	bull_created = 0

@@ -14,7 +14,7 @@ button_h = 32
 
 //buttons
 page = 0
-button = [["New Game","Select Level","Continue","Options","controls","Quit"],["Color","Motion Blur","Weapon","Hard Core Mode: "+string(obj_optionshandler.hc),"Back"],["jump: "+obj_optionshandler.mctrl[0],"left: "+obj_optionshandler.mctrl[1],"right: "+obj_optionshandler.mctrl[2],"bomb","zoom out","back"],[]]
+button = [["New Game","Select Level","Continue","Options","controls","Feedback","Quit"],["Color","Motion Blur","Weapon","Bomb","Hard Core Mode: "+string(obj_optionshandler.hc),"Back"],["jump: "+obj_optionshandler.mctrl[0],"left: "+obj_optionshandler.mctrl[1],"right: "+obj_optionshandler.mctrl[2],"bomb","zoom out","back"],[]]
 buttons = array_length(button[page])
 
 for (i=obj_optionshandler.lu-1;i>-1;i--){
@@ -23,6 +23,8 @@ for (i=obj_optionshandler.lu-1;i>-1;i--){
 button[3][obj_optionshandler.lu] = "back"
 weapon_names = ["shooter","charger","roller"]
 keychange = undefined
+bomb = 0
+bomb_names = ["splat bomb","suction bomb","burst bomb"]
 
 weapon = 0
 

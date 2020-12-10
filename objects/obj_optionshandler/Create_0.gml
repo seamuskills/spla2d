@@ -16,6 +16,7 @@ if not file_exists("options.dat"){
 	ds_map_add(map,"levels_unlocked",1)
 	ds_map_add(map,"player_color",0)
 	ds_map_add(map,"weapon",0)
+	ds_map_add(map,"bomb",0)
 	ds_map_add(map,"m1","W")
 	ds_map_add(map,"m2","A")
 	ds_map_add(map,"m3","D")
@@ -45,6 +46,8 @@ if file_exists("options.dat"){
 		if wpn = undefined{
 			wpn = 0
 		}
+		bomb = map[? "bomb"]
+		if bomb = undefined{bomb = 0}
 		for (var h=1;h<6;h++){
 			if h > 3{
 				if map[? "a"+(string(h-3))] = undefined{

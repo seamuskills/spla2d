@@ -15,8 +15,8 @@ if menu_index != last_selected{
 }
 
 last_selected = menu_index
-if obj_optionshandler.hc = false{button[1][3] = "Hard Core Mode: off"}
-if obj_optionshandler.hc = true{button[1][3] = "Hard Core Mode: on"}
+if obj_optionshandler.hc = false{button[1][4] = "Hard Core Mode: off"}
+if obj_optionshandler.hc = true{button[1][4] = "Hard Core Mode: on"}
 if obj_optionshandler.mb = false{button[1][1] = "Motion Blur for bullets: off"}
 if obj_optionshandler.mb = true{button[1][1] = "Motion Blur for bullets: on"}
 
@@ -67,3 +67,4 @@ if keychange = "zoom"{
 }
 button[1][0] = "color: "+color_names[obj_optionshandler.pcolor]
 button[1][2] = "weapon: " + weapon_names[obj_optionshandler.wpn]
+button[1][3] = "weapon: " + bomb_names[obj_optionshandler.bomb]

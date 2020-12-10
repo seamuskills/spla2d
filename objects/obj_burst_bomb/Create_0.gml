@@ -12,3 +12,5 @@ vsp = lengthdir_y(pwr,dir)
 image_blend = obj_player.color
 
 airborne = true
+
+image_speed = 0

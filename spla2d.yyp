@@ -32,6 +32,7 @@
     {"id":{"name":"sc_loadgame","path":"scripts/sc_loadgame/sc_loadgame.yy",},"order":5,},
     {"id":{"name":"sc_loadjson","path":"scripts/sc_loadjson/sc_loadjson.yy",},"order":6,},
     {"id":{"name":"sc_motionblur","path":"scripts/sc_motionblur/sc_motionblur.yy",},"order":7,},
+    {"id":{"name":"spr_burst_bomb","path":"sprites/spr_burst_bomb/spr_burst_bomb.yy",},"order":17,},
     {"id":{"name":"sc_drawrect","path":"scripts/sc_drawrect/sc_drawrect.yy",},"order":8,},
     {"id":{"name":"sc_addscore","path":"scripts/sc_addscore/sc_addscore.yy",},"order":9,},
     {"id":{"name":"obj_suction_bomb","path":"objects/obj_suction_bomb/obj_suction_bomb.yy",},"order":29,},

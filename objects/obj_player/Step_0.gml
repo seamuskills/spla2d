@@ -219,18 +219,39 @@ if (squid or mouse_check_button_released(mb_left)) and weapon = 1 and charge > 0
 	rechargable = false
 	charge = 0
 }
-if bomb and canfire and ink > 70 and not squid{
-	audio_play_sound(sfx_shoot,0,false)
-	spray = instance_create_layer(x,y,layer,obj_burst_bomb)
-	spray.image_blend = color
-	alarm[0] = fire_debounce
-	canfire = false
-	if ogink < ink{
-		ogink = ink
+if btype != 2{
+	if bomb and canfire and ink > 70 and not squid{
+		audio_play_sound(sfx_shoot,0,false)
+		if btype = 0{
+			spray = instance_create_layer(x,y,layer,obj_splat_bomb)
+		}
+		if btype = 1{
+			spray = instance_create_layer(x,y,layer,obj_suction_bomb)
+		}
+		spray.image_blend = color
+		alarm[0] = fire_debounce
+		canfire = false
+		if ogink < ink{
+			ogink = ink
+		}
+		ink -= 70
+		alarm[2] = recharge_delay
+		rechargable = false
 	}
-	ink -= 70
-	alarm[2] = recharge_delay
-	rechargable = false
+}else{
+	if bomb and canfire and ink > 40 and not squid{
+		audio_play_sound(sfx_shoot,0,false)
+		spray = instance_create_layer(x,y,layer,obj_burst_bomb)
+		spray.image_blend = color
+		alarm[0] = fire_debounce
+		canfire = false
+		if ogink < ink{
+			ogink = ink
+		}
+		ink -= 40
+		alarm[2] = recharge_delay
+		rechargable = false
+	}
 }
 if not squid and ink < 100 and rechargable{
 	ink += 0.05

@@ -10,6 +10,7 @@ var root_list = ds_list_create()
 	ds_map_add(map,"levels_unlocked",lu)
 	ds_map_add(map,"player_color",pcolor)
 	ds_map_add(map,"weapon",wpn)
+	ds_map_add(map,"bomb",bomb)
 	for (var i=1;i<4;i++){
 		ds_map_add(map,"m"+string(i),mctrl[i-1])
 	}
