@@ -69,9 +69,7 @@ if page = 1{
 		break
 		case 3:
 			bomb += 1
-			if bomb > 2{
-				bomb = 0
-			}
+			bomb = bomb mod 3
 			obj_optionshandler.bomb = bomb
 		break
 		case 4:

@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 if airborne{
-direction = point_direction(xprevious,yprevious,x,y)	
+direction = point_direction(x-hsp,y-vsp,x,y)+90	
 
 vsp += obj_player.grav /2
 
@@ -17,9 +17,9 @@ if place_meeting(x+hsp,y,obj_wall){
 	xdif = instance_nearest(x,y,obj_wall).x-x
 	ydif = instance_nearest(x,y,obj_wall).y-y
 	if abs(xdif) > abs(ydif){
-		direction = point_direction(x,y,instance_nearest(x,y,obj_wall).x,y)
+		direction = point_direction(x,y,instance_nearest(x,y,obj_wall).x,y)+90
 	}else{
-		direction = point_direction(x,y,x,instance_nearest(x,y,obj_wall).y)
+		direction = point_direction(x,y,x,instance_nearest(x,y,obj_wall).y)+90
 	}
 }
 x += hsp
@@ -33,9 +33,9 @@ if place_meeting(x,y+vsp,obj_wall){
 	xdif = instance_nearest(x,y,obj_wall).x-x
 	ydif = instance_nearest(x,y,obj_wall).y-y
 	if abs(xdif) > abs(ydif){
-		direction = point_direction(x,y,instance_nearest(x,y,obj_wall).x,y)
+		direction = point_direction(x,y,instance_nearest(x,y,obj_wall).x,y)+90
 	}else{
-		direction = point_direction(x,y,x,instance_nearest(x,y,obj_wall).y)
+		direction = point_direction(x,y,x,instance_nearest(x,y,obj_wall).y)+90
 	}
 	airborne = false
 }
@@ -48,9 +48,9 @@ if place_meeting(x,y+vsp,obj_grate){
 	xdif = instance_nearest(x,y,obj_grate).x-x
 	ydif = instance_nearest(x,y,obj_grate).y-y
 	if abs(xdif) > abs(ydif){
-		direction = point_direction(x,y,instance_nearest(x,y,obj_grate).x,y)
+		direction = point_direction(x,y,instance_nearest(x,y,obj_grate).x,y)+90
 	}else{
-		direction = point_direction(x,y,x,instance_nearest(x,y,obj_grate).y)
+		direction = point_direction(x,y,x,instance_nearest(x,y,obj_grate).y)+90
 	}
 }
 y += vsp

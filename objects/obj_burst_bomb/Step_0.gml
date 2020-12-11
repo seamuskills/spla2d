@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 if airborne{
-direction = point_direction(xprevious,yprevious,x,y)
+direction = point_direction(x-hsp,y-vsp,x,y)+90
 
 vsp += obj_player.grav /2
 

@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_splat_bomb",
+    "path": "objects/obj_splat_bomb/obj_splat_bomb.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 2,

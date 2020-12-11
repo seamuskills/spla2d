@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "spr_splat_bomb",
-    "path": "sprites/spr_splat_bomb/spr_splat_bomb.yy",
+    "name": "spr_suction_bomb",
+    "path": "sprites/spr_suction_bomb/spr_suction_bomb.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_splat_bomb",
+    "path": "objects/obj_splat_bomb/obj_splat_bomb.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 2,
@@ -28,6 +31,7 @@
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_suction_bomb","path":"objects/obj_suction_bomb/obj_suction_bomb.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_suction_bomb","path":"objects/obj_suction_bomb/obj_suction_bomb.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":7,"collisionObjectId":null,"parent":{"name":"obj_suction_bomb","path":"objects/obj_suction_bomb/obj_suction_bomb.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"obj_suction_bomb","path":"objects/obj_suction_bomb/obj_suction_bomb.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
