@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_splat_bomb",
-    "path": "sprites/spr_splat_bomb/spr_splat_bomb.yy",
+    "name": "spr_splatbomb",
+    "path": "sprites/spr_splatbomb/spr_splatbomb.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,6 +28,7 @@
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_splat_bomb","path":"objects/obj_splat_bomb/obj_splat_bomb.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_splat_bomb","path":"objects/obj_splat_bomb/obj_splat_bomb.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":7,"collisionObjectId":null,"parent":{"name":"obj_splat_bomb","path":"objects/obj_splat_bomb/obj_splat_bomb.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"obj_splat_bomb","path":"objects/obj_splat_bomb/obj_splat_bomb.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

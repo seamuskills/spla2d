@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 vsp += obj_player.grav /2
-
+direction -= hsp
 if place_meeting(x+hsp,y,obj_wall){
 	while not place_meeting(x+sign(hsp),y,obj_wall){
 		if hsp = 0{
