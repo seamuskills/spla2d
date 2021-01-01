@@ -2,12 +2,29 @@
 // You can write your code in this editor
 if dead = false{ //make sure your not dead
 // inputs and vars
-var left = keyboard_check(ord(obj_optionshandler.mctrl[1]))
-var right = keyboard_check(ord(obj_optionshandler.mctrl[2]))
-var jump = keyboard_check(ord(obj_optionshandler.mctrl[0]))
-var squidkey=keyboard_check(vk_shift)
 swimming = false
-var bomb = keyboard_check(ord(obj_optionshandler.auxctrl[1]))
+if obj_optionshandler.gp = false{
+	var left = keyboard_check(ord(obj_optionshandler.mctrl[1]))
+	var right = keyboard_check(ord(obj_optionshandler.mctrl[2]))
+	var jump = keyboard_check(ord(obj_optionshandler.mctrl[0]))
+	var squidkey=keyboard_check(vk_shift)
+	var bomb = keyboard_check(ord(obj_optionshandler.auxctrl[1]))
+	var move = right - left
+	var shoot = mouse_check_button(mb_left)
+	var aimx = mouse_x
+	var aimy = mouse_y
+}else{
+	var move = gamepad_axis_value(0,gp_axislh)
+	var jump = gamepad_button_check(0,gp_face1)
+	var squidkey=gamepad_button_check(0,gp_shoulderlb)
+	var bomb = gamepad_button_check(0,gp_shoulderl)
+	var shoot = gamepad_button_check(0,gp_shoulderrb)
+	var aimx = x+(gamepad_axis_value(0,gp_axisrh)*100)
+	var aimy = y+(gamepad_axis_value(0,gp_axisrv)*100)
+	if not jump{
+		jump = 0-round(gamepad_axis_value(0,gp_axislv))
+	}
+}
 if squidkey{
 	image_yscale=0.5
 	squid = true
@@ -25,7 +42,6 @@ if squidkey{
 if not jump{
 	jump = keyboard_check(vk_space)
 }
-var move = right - left
 //vertical grounding
 if place_meeting(x,y+1,obj_wall) or (place_meeting(x,y+1,obj_grate) and not squid){
 		var grounded = true
@@ -137,7 +153,7 @@ if place_meeting(x,y+vsp,obj_wall) or (place_meeting(x,y+vsp,obj_grate) and not 
 }else{
 	y+=vsp
 }
-if mouse_check_button(mb_left) and canfire and not squid{
+if shoot and canfire and not squid{
 	if weapon = 0 and ink > 10{
 		audio_play_sound(sfx_shoot,0,false)
 		spray = instance_create_layer(x,y,layer,obj_ink_spray)
@@ -167,10 +183,10 @@ if mouse_check_button(mb_left) and canfire and not squid{
 	}
 }
 if weapon = 1{
-	displaytargx = x+lengthdir_x(16*(12*(charge/room_speed)),point_direction(x,y,mouse_x,mouse_y))
-	displaytargy = y+lengthdir_y(16*(12*(charge/room_speed)),point_direction(x,y,mouse_x,mouse_y))
+	displaytargx = x+lengthdir_x(16*(12*(charge/room_speed)),point_direction(x,y,aimx,aimy))
+	displaytargy = y+lengthdir_y(16*(12*(charge/room_speed)),point_direction(x,y,aimx,aimy))
 }
-if (squid or mouse_check_button_released(mb_left)) and weapon = 1 and charge > 0{
+if (squid or not shoot) and weapon = 1 and charge > 0{
 	if (charge/room_speed) < 0.9{
 		audio_play_sound(sfx_shoot,0,false)
 	}else{
@@ -179,8 +195,8 @@ if (squid or mouse_check_button_released(mb_left)) and weapon = 1 and charge > 0
 	if audio_is_playing(sfx_charge){
 		audio_stop_sound(sfx_charge)
 	}
-	targx = x+lengthdir_x(16,point_direction(x,y,mouse_x,mouse_y))
-	targy = y+lengthdir_y(16,point_direction(x,y,mouse_x,mouse_y))
+	targx = x+lengthdir_x(16,point_direction(x,y,aimx,aimy))
+	targy = y+lengthdir_y(16,point_direction(x,y,aimy,aimx))
 	while bull_created < (12*(charge/room_speed)){
 		// and not place_meeting(targx,targy,obj_wall)
 		spray = instance_create_layer(targx,targy,layer,obj_ink_spray)
@@ -206,8 +222,8 @@ if (squid or mouse_check_button_released(mb_left)) and weapon = 1 and charge > 0
 		spray.hsp = 0
 		spray.vsp = 0
 		bull_created += 1
-		targx = x+lengthdir_x(16*bull_created,point_direction(x,y,mouse_x,mouse_y))
-		targy = y+lengthdir_y(16*bull_created,point_direction(x,y,mouse_x,mouse_y))
+		targx = x+lengthdir_x(16*bull_created,point_direction(x,y,aimx,aimy))
+		targy = y+lengthdir_y(16*bull_created,point_direction(x,y,aimx,aimy))
 	}
 	bull_created = 0
 	alarm[0] = 0.2 * room_speed
@@ -307,7 +323,7 @@ if place_meeting(x,y,obj_water){
 if sound_cooldown != sound_debuff{
 	sound_cooldown++
 }
-if keyboard_check_pressed(ord("R")){
+if keyboard_check_pressed(ord("R")) or gamepad_button_check_released(0,gp_select){
 	show_message("A communication error has occurred")
 	if dead = false{
 		effect_create_below(ef_smoke,x,y,1,color)

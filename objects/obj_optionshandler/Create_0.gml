@@ -71,3 +71,9 @@ if file_exists("options.dat"){
 }else{
 	show_debug_message("no options data")
 }
+if gamepad_is_connected(0){
+	gp = true
+	show_debug_message("controller")
+}else{
+	gp = false
+}

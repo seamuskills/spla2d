@@ -14,7 +14,7 @@ if not room_exists(room_next(room)){
 			}
 		}
 	}
-	show_message("percentage inked: "+ string((inked/ground)*100) + "%")
+	perc_inked=("percentage inked: "+ string((inked/ground)*100) + "%")
 	sc_addscore(inked/ground*1000)
 	room_goto(room_next(room))
 }

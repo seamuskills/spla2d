@@ -41,3 +41,8 @@ if not pause{
 if room = menu and sc != 0{
 	sc = 0
 }
+if gp and gamepad_button_check_released(0,gp_start){
+	if room != menu{
+		pause = !pause
+	}
+}
